@@ -1,7 +1,7 @@
 package model;
 
 /*
- * This class is used to store the information of a nonogram
+ * This class is used to store the information of a nonogramm
  */
 public class Nonogram {
 
