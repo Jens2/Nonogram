@@ -1,15 +1,13 @@
 package fatsoenlijkeversie;
 
-import model.BlockColour;
-
 /*
  * This class is used to store the information of a nonogramm
  */
-public class NonogramImplemenation {
+public class NonogramImplemenation implements Nonogram {
 
     private int noOfRows;
     private int noOfCols;
-    private BlockColour[][] grid;
+    private Colour[][] grid;
     private int[][] rowNumbers;
     private int[][] columnNumbers;
 
@@ -19,7 +17,7 @@ public class NonogramImplemenation {
     public NonogramImplemenation() {
         this.noOfRows = 0;
         this.noOfCols = 0;
-        this.grid = new BlockColour[0][0];
+        this.grid = new Colour[0][0];
         this.rowNumbers = new int[0][0];
         this.columnNumbers = new int[0][0];
     }
@@ -36,7 +34,7 @@ public class NonogramImplemenation {
      * @param columnNumbers The numbers that indicate how much blocks have to be colored
      *                      in the given row.
      */
-    public NonogramImplemenation(int noOfRows, int noOfCols, BlockColour[][] grid,
+    public NonogramImplemenation(int noOfRows, int noOfCols, Colour[][] grid,
                                  int[][] rowNumbers, int[][] columnNumbers) {
         this.noOfRows = noOfRows;
         this.noOfCols = noOfCols;
@@ -45,14 +43,7 @@ public class NonogramImplemenation {
         this.columnNumbers = columnNumbers;
     }
 
-    /**
-     * Get the number of rows.
-     *
-     * @return noOfRows
-     */
-    public int getnoOfRows() {
-        return noOfRows;
-    }
+
 
     /**
      * Set the number of rows to the given value.
@@ -64,15 +55,6 @@ public class NonogramImplemenation {
     }
 
     /**
-     * Get the number of columns
-     *
-     * @return noOfCols
-     */
-    public int getnoOfCols() {
-        return noOfCols;
-    }
-
-    /**
      * Set the number of columns to the given value.
      *
      * @param noOfCols The new number of columns.
@@ -81,11 +63,11 @@ public class NonogramImplemenation {
         this.noOfCols = noOfCols;
     }
 
-    public BlockColour[][] getGrid() {
+    public Colour[][] getGrid() {
         return grid;
     }
 
-    public void setGrid(BlockColour[][] grid) {
+    public void setGrid(Colour[][] grid) {
         this.grid = grid;
     }
 
@@ -103,5 +85,34 @@ public class NonogramImplemenation {
 
     public void setColumnNumbers(int[][] columnNumbers) {
         this.columnNumbers = columnNumbers;
+    }
+
+    @Override
+    public int getRowAmount() {
+        return this.noOfRows;
+    }
+
+    @Override
+    public int getColumnAmount() {
+        return this.noOfCols;
+    }
+
+    @Override
+    public Colour getColor(int row, int column) {
+        Colour result = null;
+        if (this.grid.length > row && this.grid[row].length > column) {
+            result = this.grid[row][column];
+        }
+        return result;
+    }
+
+    @Override
+    public int[] getRowNumbers(int row) {
+        return this.rowNumbers.length > row ? this.rowNumbers[row] : null;
+    }
+
+    @Override
+    public int[] getColumnNumbers(int column) {
+        return this.columnNumbers.length > column ? this.columnNumbers[column] : null;
     }
 }

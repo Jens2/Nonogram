@@ -11,5 +11,9 @@ public interface Nonogram { // <3
 	public int[] getRowNumbers(int row);
 	
 	public int[] getColumnNumbers(int column);
-	
+
+    boolean gameover();
+
+    void move(int value);
+
 }
