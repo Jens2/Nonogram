@@ -1,5 +1,8 @@
 package fatsoenlijkeversie;
 
+
+import java.util.Observer;
+
 public interface Nonogram { // <3
 	
 	public int getRowAmount();
@@ -15,5 +18,7 @@ public interface Nonogram { // <3
     boolean gameover();
 
     void move(int value);
+
+	void addObserver(Observer observer);
 
 }

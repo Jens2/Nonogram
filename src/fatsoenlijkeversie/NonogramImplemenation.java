@@ -1,9 +1,11 @@
 package fatsoenlijkeversie;
 
+import java.util.Observable;
+
 /*
  * This class is used to store the information of a nonogramm
  */
-public class NonogramImplemenation implements Nonogram {
+public class NonogramImplemenation extends Observable implements Nonogram {
 
     private int noOfRows;
     private int noOfCols;
@@ -14,9 +16,9 @@ public class NonogramImplemenation implements Nonogram {
     public static final int MAX_NO_OF_ROWS = 15;
     public static final int MAX_NO_OF_COLUMNS = 15;
 
-    public NonogramImplemenation() {
-        this.noOfRows = 0;
-        this.noOfCols = 0;
+    public NonogramImplemenation(int noOfRows, int noOfCols) {
+        this.noOfRows = noOfRows;
+        this.noOfCols = noOfCols;
         this.grid = new Colour[0][0];
         this.rowNumbers = new int[0][0];
         this.columnNumbers = new int[0][0];
@@ -127,4 +129,6 @@ public class NonogramImplemenation implements Nonogram {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 }

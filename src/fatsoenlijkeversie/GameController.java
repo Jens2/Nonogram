@@ -8,7 +8,10 @@ public class GameController {
 
 
     public GameController() {
-        nonogram = new NonogramImplemenation();
+
+
+        nonogram = new NonogramImplemenation(0, 0);
+        nonogram.addObserver(null);
 
     }
 
