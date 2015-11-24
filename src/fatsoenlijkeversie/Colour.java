@@ -1,6 +1,6 @@
 package fatsoenlijkeversie;
 
-public enum Color {
+public enum Colour {
 	
 	BLACK, WHITE;
 	

@@ -5,8 +5,8 @@ public interface Nonogram { // <3
 	public int getRowAmount();
 	
 	public int getColumnAmount();
-	
-	public Color getColor(int row, int column);
+
+	public Colour getColor(int row, int column);
 	
 
 }
