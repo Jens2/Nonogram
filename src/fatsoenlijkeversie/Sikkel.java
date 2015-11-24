@@ -1,17 +1,26 @@
 package fatsoenlijkeversie;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
 public class Sikkel extends JPanel {
-    BufferedImage img = null;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	BufferedImage img = null;
 
     public static void main(String[] args) {
-        Sikkel sikkel = new Sikkel();
+        new Sikkel();
     }
 
 
