@@ -115,4 +115,16 @@ public class NonogramImplemenation implements Nonogram {
     public int[] getColumnNumbers(int column) {
         return this.columnNumbers.length > column ? this.columnNumbers[column] : null;
     }
+
+	@Override
+	public boolean gameover() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void move(int value) {
+		// TODO Auto-generated method stub
+		
+	}
 }
