@@ -1,4 +1,4 @@
-package controller;
+package fatsoenlijkeversie;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
