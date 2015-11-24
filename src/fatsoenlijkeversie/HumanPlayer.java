@@ -1,5 +1,7 @@
 package fatsoenlijkeversie;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,10 +9,10 @@ import java.io.InputStreamReader;
 /**
  * Created by Rogier on 24-11-15
  */
-public class HumanPlayer extends Player {
+public class HumanPlayer extends Player implements MouseListener {
 
     @Override
-    public int determineMove(Nonogram nonogram) {
+    public Move determineMove(Nonogram nonogram) {
         int value = 0;
         boolean intRead = false;
         BufferedReader reader;
@@ -30,6 +32,32 @@ public class HumanPlayer extends Player {
                 intRead = true;
             }
         } while (!intRead);
-        return value;
+        return null;
+    }
+
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

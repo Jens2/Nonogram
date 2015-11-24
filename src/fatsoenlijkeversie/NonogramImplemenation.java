@@ -45,7 +45,14 @@ public class NonogramImplemenation extends Observable implements Nonogram {
         this.columnNumbers = columnNumbers;
     }
 
-
+    @Override
+    public void initializeGrid() {
+        for (int i = 0; i < noOfRows; i++) {
+            for (int j = 0; j < noOfCols; j++) {
+                this.grid[i][j] = Colour.EMPTY;
+            }
+        }
+    }
 
     /**
      * Set the number of rows to the given value.
@@ -125,8 +132,8 @@ public class NonogramImplemenation extends Observable implements Nonogram {
 	}
 
 	@Override
-	public void move(int value) {
-		// TODO Auto-generated method stub
+    public void move(Move value) {
+        // TODO Auto-generated method stub
 		
 	}
 

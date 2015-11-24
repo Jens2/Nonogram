@@ -5,10 +5,10 @@ package fatsoenlijkeversie;
  */
 public abstract class Player {
 
-    public abstract int determineMove(Nonogram nonogram);
+    public abstract Move determineMove(Nonogram nonogram);
 
     public void makeMove(Nonogram nonogram) {
-        int move = this.determineMove(nonogram);
+        Move move = this.determineMove(nonogram);
         nonogram.move(move);
     }
 }

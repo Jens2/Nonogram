@@ -7,7 +7,7 @@ import java.util.Observer;
 /**
  * Created by Rogier on 24-11-15
  */
-public class NonogramView extends JPanel implements Observer {
+public class GridView extends JPanel implements Observer {
 
 
     @Override

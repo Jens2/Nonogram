@@ -1,7 +1,6 @@
 package fatsoenlijkeversie.view;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
@@ -12,23 +11,34 @@ public class InputScreen {
     private JSpinner columnsSpinner;
     private JLabel label1;
     private JLabel label2;
-    private JPanel Inputscreen;
+    private JPanel inputScreen;
     private JButton playButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("InputScreen");
-        frame.setContentPane(new InputScreen().Inputscreen);
+        frame.setContentPane(new InputScreen().inputScreen);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
 
     public InputScreen() {
-        playButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                playButton.setText("Succes!");
-            }
-        });
+
+    }
+
+    public void addButtonListener(ActionListener actionListener) {
+        playButton.addActionListener(actionListener);
+    }
+
+    public int getNumberOfRows() {
+        return (int) rowsSpinner.getValue();
+    }
+
+    public int getNumberOfColumns() {
+        return (int) columnsSpinner.getValue();
+    }
+
+    public JPanel getInputScreen() {
+        return inputScreen;
     }
 }

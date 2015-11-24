@@ -1,18 +1,32 @@
 package fatsoenlijkeversie;
 
+import fatsoenlijkeversie.view.InputScreen;
+import fatsoenlijkeversie.view.NonogramControllerView;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * Created by Rogier on 24-11-15
  */
-public class GameController {
+public class GameController implements ActionListener {
     private Nonogram nonogram;
+    private InputScreen inputScreen;
+    private Player player;
 
+    public GameController(Player player) {
+        NonogramControllerView controllerView = new NonogramControllerView();
+        inputScreen = controllerView.getInputScreen();
+        this.player = player;
+    }
 
-    public GameController() {
-
-
-        nonogram = new NonogramImplemenation(0, 0);
-        nonogram.addObserver(null);
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("Play")) {
+            nonogram = new NonogramImplemenation(inputScreen.getNumberOfRows(), inputScreen.getNumberOfColumns());
+            nonogram.initializeGrid();
+            nonogram.addObserver(null);
+        }
     }
 
     public void run() {
@@ -26,7 +40,7 @@ public class GameController {
 
     public void play() {
         while (nonogram.gameover()) {
-
+            player.makeMove(nonogram);
         }
     }
 
