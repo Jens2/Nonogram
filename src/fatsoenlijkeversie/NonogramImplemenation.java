@@ -52,6 +52,8 @@ public class NonogramImplemenation extends Observable implements Nonogram {
                 this.grid[i][j] = Colour.EMPTY;
             }
         }
+        this.setChanged();
+        this.notifyObservers(grid);
     }
 
     /**
@@ -133,9 +135,10 @@ public class NonogramImplemenation extends Observable implements Nonogram {
 
 	@Override
     public void move(Move value) {
-        // TODO Auto-generated method stub
-		
-	}
+        this.grid[value.getRow()][value.getColumn()] = value.getColour();
+        this.setChanged();
+        this.notifyObservers(grid);
+    }
 
 
 }

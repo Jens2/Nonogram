@@ -8,16 +8,15 @@ import java.awt.*;
  */
 public class NonogramControllerView {
     private InputScreen inputScreen;
-
+    private JFrame frame;
+    private NonoPanel nonoPanel;
 
     public NonogramControllerView() {
-        JFrame frame = new JFrame("InputScreen");
+        frame = new JFrame("InputScreen");
 
         inputScreen = new InputScreen();
         frame.setContentPane(inputScreen.getInputScreen());
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
         Dimension fullScreen = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setSize(fullScreen);
         frame.setVisible(true);
@@ -27,4 +26,13 @@ public class NonogramControllerView {
     public InputScreen getInputScreen() {
         return inputScreen;
     }
+
+    public void InputRowAndColumns() {
+        frame.setContentPane(nonoPanel);
+    }
+
+    public NonoPanel getNonoPanel() {
+        return nonoPanel;
+    }
+
 }
