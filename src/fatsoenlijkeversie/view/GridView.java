@@ -1,7 +1,7 @@
 package fatsoenlijkeversie.view;
 
 import fatsoenlijkeversie.Colour;
-import fatsoenlijkeversie.NonogramImplemenation;
+import fatsoenlijkeversie.NonogramImplementation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +20,7 @@ public class GridView extends JComponent implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        if (o instanceof NonogramImplemenation) {
+        if (o instanceof NonogramImplementation) {
             this.grid = (Colour[][]) arg;
         }
     }

@@ -25,7 +25,7 @@ public class GameController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Play")) {
-            nonogram = new NonogramImplemenation(inputScreen.getNumberOfRows(), inputScreen.getNumberOfColumns());
+            nonogram = new NonogramImplementation(inputScreen.getNumberOfRows(), inputScreen.getNumberOfColumns());
             nonogram.initializeGrid();
             nonogram.addObserver(controllerView.getNonoPanel().getGridView());
             controllerView.InputRowAndColumns();

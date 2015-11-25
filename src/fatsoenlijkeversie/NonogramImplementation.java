@@ -5,7 +5,7 @@ import java.util.Observable;
 /*
  * This class is used to store the information of a nonogramm
  */
-public class NonogramImplemenation extends Observable implements Nonogram {
+public class NonogramImplementation extends Observable implements Nonogram {
 
     private int noOfRows;
     private int noOfCols;
@@ -16,7 +16,7 @@ public class NonogramImplemenation extends Observable implements Nonogram {
     public static final int MAX_NO_OF_ROWS = 15;
     public static final int MAX_NO_OF_COLUMNS = 15;
 
-    public NonogramImplemenation(int noOfRows, int noOfCols) {
+    public NonogramImplementation(int noOfRows, int noOfCols) {
         this.noOfRows = noOfRows;
         this.noOfCols = noOfCols;
         this.grid = new Colour[0][0];
@@ -36,7 +36,7 @@ public class NonogramImplemenation extends Observable implements Nonogram {
      * @param columnNumbers The numbers that indicate how much blocks have to be colored
      *                      in the given row.
      */
-    public NonogramImplemenation(int noOfRows, int noOfCols, Colour[][] grid,
+    public NonogramImplementation(int noOfRows, int noOfCols, Colour[][] grid,
                                  int[][] rowNumbers, int[][] columnNumbers) {
         this.noOfRows = noOfRows;
         this.noOfCols = noOfCols;
