@@ -13,8 +13,11 @@ public class NonogramImplementation extends Observable implements Nonogram {
     private int[][] rowNumbers;
     private int[][] columnNumbers;
 
-    public static final int MAX_NO_OF_ROWS = 15;
-    public static final int MAX_NO_OF_COLUMNS = 15;
+    /*
+     * Deze limitaties hadden te maken met de FPGA en de limieten van het protocol wat daarvoor was geschreven
+     * public static final int MAX_NO_OF_ROWS = 15;
+     * public static final int MAX_NO_OF_COLUMNS = 15;
+     */
 
     public NonogramImplementation(int noOfRows, int noOfCols) {
         this.noOfRows = noOfRows;

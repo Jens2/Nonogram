@@ -12,7 +12,11 @@ import java.util.Observer;
  * Created by Rogier on 24-11-15
  */
 public class GridView extends JComponent implements Observer {
-    private Colour[][] grid;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Colour[][] grid;
 
     public GridView(Colour[][] grid) {
         this.grid = grid;
