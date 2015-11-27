@@ -1,8 +1,17 @@
 package fatsoenlijkeversie.view;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
 
 /**
  * Created by Rogier on 24-11-15
@@ -61,7 +70,10 @@ public class InputScreen {
     private void $$$setupUI$$$() {
         inputScreen = new JPanel();
         inputScreen.setLayout(new GridBagLayout());
-        rowsSpinner = new JSpinner();
+        SpinnerNumberModel spinModel = new SpinnerNumberModel();
+        spinModel.setValue(5);
+        spinModel.setMinimum(5);
+        rowsSpinner = new JSpinner(spinModel);
         GridBagConstraints gbc;
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
@@ -70,7 +82,10 @@ public class InputScreen {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.ipadx = 30;
         inputScreen.add(rowsSpinner, gbc);
-        columnsSpinner = new JSpinner();
+        spinModel = new SpinnerNumberModel();
+        spinModel.setValue(5);
+        spinModel.setMinimum(5);
+        columnsSpinner = new JSpinner(spinModel);
         gbc = new GridBagConstraints();
         gbc.gridx = 2;
         gbc.gridy = 4;
