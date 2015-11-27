@@ -34,4 +34,9 @@ public class RowNumberView extends JPanel {
         }
 
     }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+    }
 }
