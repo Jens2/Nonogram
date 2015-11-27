@@ -37,6 +37,13 @@ public class GridView extends JComponent implements Observer {
         for (int row = 0; row < grid.length; row++) {
             for (int column = 0; column < grid[row].length; column++) {
                 g.drawRect(column * squareWidth, row * squareHeight, squareWidth, squareHeight);
+                if (grid[row][column] == Colour.WHITE) {
+                    g.setColor(Color.WHITE);
+                    g.fillRect(column * squareWidth, row * squareHeight, squareWidth, squareHeight);
+                } else {
+                    g.setColor(Color.BLACK);
+                    g.fillRect(column * squareWidth, row * squareHeight, squareWidth, squareHeight);
+                }
             }
 
         }

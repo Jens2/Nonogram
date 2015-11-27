@@ -1,17 +1,8 @@
 package fatsoenlijkeversie.view;
 
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
 
 /**
  * Created by Rogier on 24-11-15
@@ -34,7 +25,14 @@ public class InputScreen {
     }
 
     public InputScreen() {
-
+        SpinnerNumberModel spinnerNumberModel = new SpinnerNumberModel();
+        spinnerNumberModel.setValue(5);
+        spinnerNumberModel.setMinimum(5);
+        rowsSpinner.setModel(spinnerNumberModel);
+        SpinnerNumberModel spinnerNumberModel1 = new SpinnerNumberModel();
+        spinnerNumberModel1.setValue(5);
+        spinnerNumberModel1.setMinimum(5);
+        columnsSpinner.setModel(spinnerNumberModel1);
     }
 
     public void addButtonListener(ActionListener actionListener) {
@@ -70,10 +68,7 @@ public class InputScreen {
     private void $$$setupUI$$$() {
         inputScreen = new JPanel();
         inputScreen.setLayout(new GridBagLayout());
-        SpinnerNumberModel spinModel = new SpinnerNumberModel();
-        spinModel.setValue(5);
-        spinModel.setMinimum(5);
-        rowsSpinner = new JSpinner(spinModel);
+        rowsSpinner = new JSpinner();
         GridBagConstraints gbc;
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
@@ -82,10 +77,7 @@ public class InputScreen {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.ipadx = 30;
         inputScreen.add(rowsSpinner, gbc);
-        spinModel = new SpinnerNumberModel();
-        spinModel.setValue(5);
-        spinModel.setMinimum(5);
-        columnsSpinner = new JSpinner(spinModel);
+        columnsSpinner = new JSpinner();
         gbc = new GridBagConstraints();
         gbc.gridx = 2;
         gbc.gridy = 4;
