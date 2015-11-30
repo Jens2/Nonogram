@@ -22,7 +22,7 @@ public class NonogramImplementation extends Observable implements Nonogram {
     public NonogramImplementation(int noOfRows, int noOfCols) {
         this.noOfRows = noOfRows;
         this.noOfCols = noOfCols;
-        this.grid = new Colour[0][0];
+        this.grid = new Colour[noOfRows][noOfCols];
         this.rowNumbers = new int[0][0];
         this.columnNumbers = new int[0][0];
     }

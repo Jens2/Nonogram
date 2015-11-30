@@ -1,6 +1,7 @@
 package fatsoenlijkeversie.view;
 
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 import java.awt.*;
 
 /**
@@ -11,9 +12,9 @@ public class RowNumberView extends JPanel {
     private int columnAmount;
 
     public RowNumberView(int rowAmount, int columnAmount) {
+        super(new GridBagLayout());
         this.rowAmount = rowAmount;
         this.columnAmount = columnAmount;
-        this.setLayout(new GridBagLayout());
         this.setupGUI();
     }
 
@@ -22,10 +23,10 @@ public class RowNumberView extends JPanel {
         for (int i = 0; i < rowAmount; i++) {
             for (int j = 0; j < (columnAmount / 2) + 1; j++) {
                 JFormattedTextField textField1 = new JFormattedTextField();
-                textField1.setValue(new Integer(100));
+                
                 gbc = new GridBagConstraints();
-                gbc.gridx = i;
-                gbc.gridy = j;
+                gbc.gridx = j;
+                gbc.gridy = i;
                 gbc.weightx = 1.0;
                 gbc.fill = GridBagConstraints.HORIZONTAL;
                 this.add(textField1, gbc);

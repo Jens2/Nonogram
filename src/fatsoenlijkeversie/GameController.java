@@ -19,7 +19,7 @@ public class GameController implements ActionListener {
         controllerView = new NonogramControllerView();
         inputScreen = controllerView.getInputScreen();
         this.player = player;
-
+        inputScreen.addButtonListener(this);
     }
 
     @Override
@@ -27,8 +27,9 @@ public class GameController implements ActionListener {
         if (e.getActionCommand().equals("Play")) {
             nonogram = new NonogramImplementation(inputScreen.getNumberOfRows(), inputScreen.getNumberOfColumns());
             nonogram.initializeGrid();
+
+            controllerView.InputRowAndColumns(nonogram.getGrid());
             nonogram.addObserver(controllerView.getNonoPanel().getGridView());
-            controllerView.InputRowAndColumns();
         }
     }
 

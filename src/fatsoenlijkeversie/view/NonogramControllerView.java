@@ -1,5 +1,7 @@
 package fatsoenlijkeversie.view;
 
+import fatsoenlijkeversie.Colour;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -27,8 +29,13 @@ public class NonogramControllerView {
         return inputScreen;
     }
 
-    public void InputRowAndColumns() {
+    public void InputRowAndColumns(Colour[][] grid) {
+        int rowAmount = inputScreen.getNumberOfRows();
+        int columnAmount = inputScreen.getNumberOfColumns();
+        nonoPanel = new NonoPanel(rowAmount, columnAmount, grid);
         frame.setContentPane(nonoPanel);
+        frame.setVisible(true);
+        frame.repaint();
     }
 
     public NonoPanel getNonoPanel() {

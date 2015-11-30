@@ -4,7 +4,9 @@ package fatsoenlijkeversie;
 import java.util.Observer;
 
 public interface Nonogram {
-    public void initializeGrid();
+    void initializeGrid();
+
+    Colour[][] getGrid();
 
     int getRowAmount();
 

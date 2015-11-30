@@ -11,9 +11,9 @@ public class ColumnNumberView extends JPanel {
     private int columnAmount;
 
     public ColumnNumberView(int rowAmount, int columnAmount) {
+        super(new GridBagLayout());
         this.rowAmount = rowAmount;
         this.columnAmount = columnAmount;
-        this.setLayout(new GridBagLayout());
         this.setupGUI();
     }
 
